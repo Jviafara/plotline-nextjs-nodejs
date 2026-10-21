@@ -20,10 +20,10 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import SidebarLink from "./SidebarLink";
 import { useAppDispatch, useAppSelector } from "@/app/redux";
 import { setIsSidebarCollapsed } from "@/lib/redux/globalSlice";
 import { useGetProjectsQuery } from "@/lib/redux/api";
+import SidebarLink from "../atoms/SidebarLink";
 
 const Sidebar = () => {
   const [showProjects, setShowProjects] = useState(true);

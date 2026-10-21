@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Header from "./Header";
-import TabButton from "./TabButton";
+import Header from "../molecules/Header";
+import TabButton from "../atoms/TabButton";
 import { Clock, FilterIcon, Grid3X3, List, Share2, Table } from "lucide-react";
 
 type Props = {

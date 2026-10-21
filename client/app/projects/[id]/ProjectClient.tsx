@@ -1,6 +1,7 @@
 "use client";
 
-import ProjectHeader from "@/components/ProjectHeader";
+import Board from "@/components/organisms/Board";
+import ProjectHeader from "@/components/organisms/ProjectHeader";
 import { use, useState } from "react";
 
 type Props = {
@@ -20,8 +21,10 @@ const ProjectClient = ({ params }: Props) => {
 
       {/* Header */}
       <ProjectHeader activeTab={activeTab} setActiveTab={setActiveTab} />
-      {/* {activeTab === 'Board' && (<Board/>) */}
       {/* Header */}
+      {activeTab === "Board" && (
+        <Board id={Number(id)} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
+      )}
     </div>
   );
 };

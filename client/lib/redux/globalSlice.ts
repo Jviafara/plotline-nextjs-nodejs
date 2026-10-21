@@ -18,7 +18,6 @@ export const globalSlice = createSlice({
       state.isSidebarCollapsed = action.payload;
     },
     setIsDarkMode: (state, action: PayloadAction<boolean>) => {
-      console.log(action.payload);
       state.isDarkMode = action.payload;
     },
   },

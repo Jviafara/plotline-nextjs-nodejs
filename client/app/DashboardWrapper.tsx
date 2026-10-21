@@ -1,8 +1,8 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/organisms/Navbar";
 import dynamic from "next/dynamic";
-const Sidebar = dynamic(() => import("@/components/Sidebar"), {
+const Sidebar = dynamic(() => import("@/components/organisms/Sidebar"), {
   ssr: false,
   loading: () => <aside className="w-0 md:w-64" />,
 });

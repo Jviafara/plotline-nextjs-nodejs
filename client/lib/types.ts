@@ -32,7 +32,7 @@ export interface User {
 
 export interface Attachment {
   id: number;
-  fileUrl: string;
+  fileURL: string;
   fileName: string;
   taskId: number;
   uploadedById: number;
@@ -44,7 +44,7 @@ export interface Task {
   description?: string;
   status?: Status;
   priority?: Priority;
-  tags?: string[];
+  tags?: string;
   startDate?: string;
   dueDate?: string;
   points?: number;
