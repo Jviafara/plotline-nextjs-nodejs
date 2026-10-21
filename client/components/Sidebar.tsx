@@ -23,11 +23,13 @@ import { useState } from "react";
 import SidebarLink from "./SidebarLink";
 import { useAppDispatch, useAppSelector } from "@/app/redux";
 import { setIsSidebarCollapsed } from "@/lib/redux/globalSlice";
+import { useGetProjectsQuery } from "@/lib/redux/api";
 
 const Sidebar = () => {
   const [showProjects, setShowProjects] = useState(true);
   const [showPriority, setShowPriority] = useState(true);
 
+  const { data: projects } = useGetProjectsQuery();
   const dispatch = useAppDispatch();
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed,
@@ -100,6 +102,15 @@ const Sidebar = () => {
         </button>
 
         {/* Project List */}
+        {showProjects &&
+          projects?.map((project) => (
+            <SidebarLink
+              key={project.id}
+              href={`/projects/${project.id}`}
+              label={project.name}
+              icon={Briefcase}
+            />
+          ))}
         {/* Project List */}
 
         <button
