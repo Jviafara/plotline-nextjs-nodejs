@@ -1,7 +1,10 @@
 "use client";
 
 import Board from "@/components/organisms/Board";
+import List from "@/components/organisms/List";
 import ProjectHeader from "@/components/organisms/ProjectHeader";
+import TableView from "@/components/organisms/TableView";
+import TimeLine from "@/components/organisms/TimeLine";
 import { use, useState } from "react";
 
 type Props = {
@@ -24,6 +27,21 @@ const ProjectClient = ({ params }: Props) => {
       {/* Header */}
       {activeTab === "Board" && (
         <Board id={Number(id)} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
+      )}
+      {activeTab === "List" && (
+        <List id={Number(id)} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
+      )}
+      {activeTab === "TimeLine" && (
+        <TimeLine
+          id={Number(id)}
+          setIsModalNewTaskOpen={setIsModalNewTaskOpen}
+        />
+      )}
+      {activeTab === "Table" && (
+        <TableView
+          id={Number(id)}
+          setIsModalNewTaskOpen={setIsModalNewTaskOpen}
+        />
       )}
     </div>
   );

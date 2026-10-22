@@ -57,3 +57,5 @@ export interface Task {
   comments?: Comment[];
   attachments?: Attachment[];
 }
+
+export type TaskTypesItems = "task" | "milestone" | "project";

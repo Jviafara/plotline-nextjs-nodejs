@@ -8,3 +8,6 @@ export const taskStatus = [
   "Under Review",
   "Completed",
 ];
+
+export const DataGridClassNames =
+  "border border-gray-200 bg-white text-gray-900 shadow dark:border-stroke-dark dark:bg-dark-secondary dark:text-gray-200";
