@@ -6,7 +6,7 @@ const Sidebar = dynamic(() => import("@/components/organisms/Sidebar"), {
   ssr: false,
   loading: () => <aside className="w-0 md:w-64" />,
 });
-import { ReactNode, useEffect } from "react";
+import { ReactNode, Suspense, useEffect } from "react";
 import StoreProvider, { useAppSelector } from "./redux";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
@@ -43,7 +43,11 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 const DashboardWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <StoreProvider>
-      <DashboardLayout>{children}</DashboardLayout>
+      <DashboardLayout>
+        <Suspense fallback={<div className="p-6">Loading...</div>}>
+          {children}
+        </Suspense>
+      </DashboardLayout>
     </StoreProvider>
   );
 };

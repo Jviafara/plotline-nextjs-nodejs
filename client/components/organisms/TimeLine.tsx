@@ -3,7 +3,6 @@ import { useGetTasksQuery } from "@/lib/redux/api";
 import { TaskTypesItems } from "@/lib/types";
 import { DisplayOption, Gantt, ViewMode } from "gantt-task-react";
 import { useMemo, useState } from "react";
-import "gantt-task-react/dist/index.css";
 import NoTask from "../atoms/NoTask";
 
 type Props = {

@@ -59,3 +59,9 @@ export interface Task {
 }
 
 export type TaskTypesItems = "task" | "milestone" | "project";
+
+export interface SearchResult {
+  tasks?: Task[];
+  projects?: Project[];
+  users?: User[];
+}
