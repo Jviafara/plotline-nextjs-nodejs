@@ -16,7 +16,7 @@ const Task = ({ task }: Props) => {
     }),
   }));
 
-  const taskTagSplit = task.tags ? task.tags.split(" ") : [];
+  const taskTagSplit = task.tags ? task.tags.split(",") : [];
   const formattedStartDate = task.startDate
     ? format(new Date(task.startDate), "P")
     : "";
@@ -51,7 +51,7 @@ const Task = ({ task }: Props) => {
                   key={tag}
                   className="rounded-full bg-blue-100 px-2 py-1 text-xs"
                 >
-                  {tag}
+                  {tag.trim()}
                 </div>
               ))}
             </div>

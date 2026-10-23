@@ -2,6 +2,7 @@
 
 import Board from "@/components/organisms/Board";
 import List from "@/components/organisms/List";
+import ModalNewTask from "@/components/organisms/ModalNewTask";
 import ProjectHeader from "@/components/organisms/ProjectHeader";
 import TableView from "@/components/organisms/TableView";
 import TimeLine from "@/components/organisms/TimeLine";
@@ -20,6 +21,11 @@ const ProjectClient = ({ params }: Props) => {
   return (
     <div>
       {/* Modal New Taks */}
+      <ModalNewTask
+        isOpen={isModalNewTaskOpen}
+        onClose={() => setIsModalNewTaskOpen(false)}
+        id={id}
+      />
       {/* Modal New Taks */}
 
       {/* Header */}

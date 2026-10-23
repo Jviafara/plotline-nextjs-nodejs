@@ -4,6 +4,7 @@ import { TaskTypesItems } from "@/lib/types";
 import { DisplayOption, Gantt, ViewMode } from "gantt-task-react";
 import { useMemo, useState } from "react";
 import "gantt-task-react/dist/index.css";
+import NoTask from "../atoms/NoTask";
 
 type Props = {
   id: number;
@@ -47,6 +48,7 @@ const TimeLine = ({ id, setIsModalNewTaskOpen }: Props) => {
   };
 
   if (isLoading) return <div>Loading...</div>;
+  if (!tasks || tasks.length <= 0) return <NoTask />;
   if (error) return <div>An error Acurred while fetching tasks!</div>;
 
   return (

@@ -4,6 +4,7 @@ import Header from "../molecules/Header";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { DataGridClassNames } from "@/lib/constansts";
 import { dataGridSxStyles } from "@/lib/utils";
+import { PlusSquare } from "lucide-react";
 
 type Props = {
   id: number;
@@ -55,13 +56,13 @@ const columns: GridColDef[] = [
     field: "author",
     headerName: "Author",
     width: 130,
-    renderCell: (params) => params.value.username || "Unknown",
+    renderCell: (params) => params.value?.username || "Unknown",
   },
   {
     field: "assignee",
     headerName: "Assignee",
     width: 150,
-    renderCell: (params) => params.value.username || "Unassigned",
+    renderCell: (params) => params.value?.username || "Unassigned",
   },
 ];
 
@@ -79,7 +80,19 @@ const TableView = ({ id, setIsModalNewTaskOpen }: Props) => {
   return (
     <div className="h-135 w-full px-4 pb-8 xl:px-6">
       <div className="pt-5">
-        <Header title="Table" isSmallText />
+        <Header
+          title="Table"
+          isSmallText
+          buttonComponent={
+            <button
+              onClick={() => setIsModalNewTaskOpen(true)}
+              className="bg-blue-primary flex items-center rounded-md px-3 py-2 text-white hover:bg-blue-600"
+            >
+              <PlusSquare className="mr-2 h-5 w-5" />
+              Add Task
+            </button>
+          }
+        />
       </div>
       <DataGrid
         rows={tasks || []}

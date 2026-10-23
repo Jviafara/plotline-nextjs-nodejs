@@ -11,3 +11,9 @@ export const taskStatus = [
 
 export const DataGridClassNames =
   "border border-gray-200 bg-white text-gray-900 shadow dark:border-stroke-dark dark:bg-dark-secondary dark:text-gray-200";
+
+export const inputStyles =
+  "w-full rounded border border-gray-300 p-2 shadow-sm dark:boder-dark-tertiary dark:bg-dark-tertiary dark:text-white dark:focus:outline-none";
+
+export const selectStyles =
+  "mb-4 block w-full rounded border border-gray-300 px-3 py-2 dark:border-dark-tertiary dark:bg-dark-tertiary dark:text-white dark:focus:outline-none";

@@ -1,7 +1,16 @@
 import { useState } from "react";
 import Header from "../molecules/Header";
 import TabButton from "../atoms/TabButton";
-import { Clock, FilterIcon, Grid3X3, List, Share2, Table } from "lucide-react";
+import {
+  Clock,
+  FilterIcon,
+  Grid3X3,
+  List,
+  PlusSquare,
+  Share2,
+  Table,
+} from "lucide-react";
+import ModalNewProject from "./ModalNewProject";
 
 type Props = {
   activeTab: string;
@@ -14,10 +23,25 @@ const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
   return (
     <div className="px-4 xl:px-6">
       {/* Modal New Project */}
+      <ModalNewProject
+        isOpen={isModalNewProjectOpen}
+        onClose={() => setIsModalNewProjectOpen(false)}
+      />
       {/* Modal New Project */}
 
       <div className="pt-6 pb-6 lg:pt-8 lg:pb-4">
-        <Header title={"Project Header"} />
+        <Header
+          title={"Project Header"}
+          buttonComponent={
+            <button
+              onClick={() => setIsModalNewProjectOpen(true)}
+              className="bg-blue-primary flex items-center rounded-md px-3 py-2 text-white hover:bg-blue-600"
+            >
+              <PlusSquare className="mr-2 h-5 w-5" />
+              New Board
+            </button>
+          }
+        />
       </div>
 
       {/* Tabs */}
