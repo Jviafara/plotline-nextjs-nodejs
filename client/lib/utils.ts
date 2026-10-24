@@ -15,9 +15,10 @@ export const dataGridSxStyles = (isDarkMode: boolean) => {
     "& .MuiDataGrid-columnHeader": {
       backgroundColor,
     },
-    "& .MuiDataGrid-columnHeaders .MuiDataGrid-filler, & .MuiDataGrid-columnHeaders .MuiDataGrid-scrollbarFiller": {
-      backgroundColor,
-    },
+    "& .MuiDataGrid-columnHeaders .MuiDataGrid-filler, & .MuiDataGrid-columnHeaders .MuiDataGrid-scrollbarFiller":
+      {
+        backgroundColor,
+      },
     "& .MuiDataGrid-cell": {
       borderBottom: `1px solid ${borderColor}`,
     },
@@ -38,11 +39,15 @@ export const dataGridSxStyles = (isDarkMode: boolean) => {
       color: textColor,
       borderTop: `1px solid ${borderColor}`,
     },
-    "& .MuiTablePagination-root, & .MuiDataGrid-menuIconButton, & .MuiDataGrid-sortIcon, & .MuiSvgIcon-root": {
-      color: textColor,
-    },
+    "& .MuiTablePagination-root, & .MuiDataGrid-menuIconButton, & .MuiDataGrid-sortIcon, & .MuiSvgIcon-root":
+      {
+        color: textColor,
+      },
     "& .MuiDataGrid-withBorderColor": {
       borderColor,
+    },
+    "& .MuiDataGrid-columnSeparator": {
+      display: "none",
     },
   };
 };
