@@ -51,3 +51,19 @@ export const dataGridSxStyles = (isDarkMode: boolean) => {
     },
   };
 };
+
+export const chartColors = (isDarkMode: boolean) => {
+  return isDarkMode
+    ? {
+        bar: "#8884D8",
+        barGrid: "#303030",
+        pieFill: "#4A90E2",
+        text: "#FFFFFF",
+      }
+    : {
+        bar: "#8884D8",
+        barGrid: "#E0E0E0",
+        pieFill: "#82C89D",
+        text: "#000000",
+      };
+};

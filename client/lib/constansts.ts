@@ -21,3 +21,5 @@ export const selectStyles =
 export const settingsLabelStyles = "block text-sm font-medium dark:text-white";
 export const settingsTextStyles =
   "m-1 block w-full border border-gray-300 rounded-md shadow-md p-2 dark:text-white";
+
+export const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
